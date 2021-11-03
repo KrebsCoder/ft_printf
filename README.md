@@ -64,7 +64,7 @@ For more details and references, you can access this link:
 - The ft_printf.h is necessary, it contains all the functions prototypes, it's also creating a printf library and contains the defined macros.
 - The get_next_line.h has the header with the prototypes of utils.
 - main.c has the test.
-- When we compile with the first part of the command line, it's going to be generate an executable file so the ```&& ./a.out``` is saying to compiler to also execute it.
+- When we compile with the first part of the command line, it's going to be generate an executable file so the ```&& ./a.out``` is saying to the compiler to also execute it.
 
 ## 🤝 Contributors
 
