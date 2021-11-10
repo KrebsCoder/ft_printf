@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 19:48:27 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2021/10/28 21:44:11 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/11/10 17:21:11 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 static size_t	ft_intlen(unsigned long long n, int base);
-static char	*ft_strint(char *str, long len, unsigned long long n, int base);
+static char		*ft_strint(char *str, long len, unsigned long long n, int base);
 
 char	*ft_utoa_base(unsigned long long num, int base)
 {
@@ -48,8 +48,8 @@ static char	*ft_strint(char *str, long len, unsigned long long n, int base)
 	len = len - 1;
 	while (n)
 	{
-		if(n % base >= 10)
-			str[len] = ((n % base) - 10) + 'a';//(- 10)?;
+		if (n % base >= 10)
+			str[len] = ((n % base) - 10) + 'a';
 		else
 			str[len] = (n % base) + 48;
 		n = n / base;

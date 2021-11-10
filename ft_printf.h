@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 23:01:15 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2021/10/21 18:42:548 by gcosta-d         ###   ########.fr       */
+/*   Created: 2021/11/10 17:28:31 by lkrebs-l          #+#    #+#             */
+/*   Updated: 2021/11/10 17:28:42 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int		ft_print_int(int decimal);
 int		ft_print_u(unsigned int num);
 int		ft_print_p(unsigned long pointer);
 int		ft_print_x(unsigned int hex);
-int		ft_print_X(unsigned int hex_upper);
-
+int		ft_print_x_upper(unsigned int hex_upper);
 
 #endif
