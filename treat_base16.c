@@ -6,12 +6,11 @@
 /*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 17:21:39 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2021/11/10 17:24:09 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2021/11/10 19:26:41 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	ft_print_x(unsigned int hex)
 {
@@ -24,7 +23,7 @@ int	ft_print_x(unsigned int hex)
 	return (count);
 }
 
-int	ft_print_xupper(unsigned int hex_upper)
+int	ft_print_x_upper(unsigned int hex_upper)
 {
 	int		count;
 	char	*str;
