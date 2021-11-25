@@ -3,20 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   treat_base16.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/18 23:01:12 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2021/10/21 19:09:449 by gcosta-d         ###   ########.fr       */
+/*   Created: 2021/11/10 17:21:39 by lkrebs-l          #+#    #+#             */
+/*   Updated: 2021/11/10 19:26:41 by lkrebs-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	ft_print_x(unsigned int hex)
 {
-	int count;
-	char *str;
+	int		count;
+	char	*str;
 
 	str = ft_utoa_base(hex, 16);
 	count = ft_putstr(str);
@@ -24,11 +23,11 @@ int	ft_print_x(unsigned int hex)
 	return (count);
 }
 
-int	ft_print_X(unsigned int hex_upper)
+int	ft_print_x_upper(unsigned int hex_upper)
 {
-	int count;
-	char *str;
-	int	i;
+	int		count;
+	char	*str;
+	int		i;
 
 	str = ft_utoa_base(hex_upper, 16);
 	i = 0;
@@ -53,5 +52,5 @@ int	ft_print_p(unsigned long pointer)
 	str = ft_utoa_base(pointer, 16);
 	count += ft_putstr(str);
 	free(str);
-	return(count);
+	return (count);
 }

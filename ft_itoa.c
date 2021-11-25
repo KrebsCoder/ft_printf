@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkrebs-l <lkrebs-l@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 21:31:24 by gcosta-d          #+#    #+#             */
-/*   Updated: 2021/10/28 21:43:44 by lkrebs-l         ###   ########.fr       */
+/*   Updated: 2021/11/24 21:48:21 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static char	*ft_strint(char *str, size_t len, int n);
+static char		*ft_strint(char *str, size_t len, int n);
 static size_t	ft_intlen(int n);
 
 char	*ft_itoa(int n)
