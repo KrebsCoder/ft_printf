@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 17:21:36 by gcosta-d          #+#    #+#             */
-/*   Updated: 2021/11/24 21:32:29 by gcosta-d         ###   ########.fr       */
+/*   Created: 2021/08/20 16:36:07 by gcosta-d          #+#    #+#             */
+/*   Updated: 2021/09/08 17:55:55 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putstr(const char *str)
+/* This function compares two strings and return the difference
+ * between the first divergent content.
+ */
+
+int	ft_strncmp(const char *s1, const char *s2, size_t size)
 {
-	int	count;
+	size_t	i;
 
-	count = 0;
-	while (str[count])
+	i = 0;
+	while (i < size && (s1[i] != '\0' || s2[i] != '\0'))
 	{
-		write(1, &str[count], 1);
-		count++;
+		if (s1[i] != s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		i++;
 	}
-	return (count);
+	return (0);
 }

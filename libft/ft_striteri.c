@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 17:21:36 by gcosta-d          #+#    #+#             */
-/*   Updated: 2021/11/24 21:32:29 by gcosta-d         ###   ########.fr       */
+/*   Created: 2021/08/25 15:02:52 by gcosta-d          #+#    #+#             */
+/*   Updated: 2021/09/14 10:54:20 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putstr(const char *str)
+/* This function iterate the string and applies the callback
+ * function in every index of the string.
+ */
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int	count;
+	unsigned int	i;
 
-	count = 0;
-	while (str[count])
+	if (s)
 	{
-		write(1, &str[count], 1);
-		count++;
+		i = 0;
+		while (s[i])
+		{
+			f(i, &s[i]);
+			i++;
+		}
 	}
-	return (count);
 }

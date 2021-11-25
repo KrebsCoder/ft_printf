@@ -6,7 +6,7 @@
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/21 19:48:27 by lkrebs-l          #+#    #+#             */
-/*   Updated: 2021/10/28 21:44:11 by gcosta-d         ###   ########.fr       */
+/*   Updated: 2021/10/29 23:31:42 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static char	*ft_strint(char *str, long len, unsigned long long n, int base)
 	while (n)
 	{
 		if(n % base >= 10)
-			str[len] = ((n % base) - 10) + 'a';//(- 10)?;
+			str[len] = ((n % base) - 10) + 'a';
 		else
 			str[len] = (n % base) + 48;
 		n = n / base;

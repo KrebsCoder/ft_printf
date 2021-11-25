@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 17:21:36 by gcosta-d          #+#    #+#             */
-/*   Updated: 2021/11/24 21:32:29 by gcosta-d         ###   ########.fr       */
+/*   Created: 2021/08/20 16:36:17 by gcosta-d          #+#    #+#             */
+/*   Updated: 2021/09/08 18:02:19 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putstr(const char *str)
+/* Strrchr works reverse if compared to strchr.
+ * Return a pointer to the last occourence of a passed char.
+ */
+
+char	*ft_strrchr(const char *s, int c)
 {
-	int	count;
+	int	s_len;
 
-	count = 0;
-	while (str[count])
+	s_len = ft_strlen(s);
+	while (s_len >= 0)
 	{
-		write(1, &str[count], 1);
-		count++;
+		if (s[s_len] == (char)c)
+			return ((char *)&s[s_len]);
+		s_len--;
 	}
-	return (count);
+	return (NULL);
 }

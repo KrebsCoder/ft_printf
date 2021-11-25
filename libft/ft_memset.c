@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 17:21:36 by gcosta-d          #+#    #+#             */
-/*   Updated: 2021/11/24 21:32:29 by gcosta-d         ###   ########.fr       */
+/*   Created: 2021/08/20 16:35:38 by gcosta-d          #+#    #+#             */
+/*   Updated: 2021/09/14 10:15:17 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putstr(const char *str)
+/*	Memset put in n memories a passing integer and return
+ *	a pointer to the first memory area passed.
+ */
+
+void	*ft_memset(void *s, int c, size_t n)
 {
-	int	count;
+	size_t	i;
+	char	*buff;
 
-	count = 0;
-	while (str[count])
+	i = 0;
+	buff = s;
+	while (i < n)
 	{
-		write(1, &str[count], 1);
-		count++;
+		buff[i] = c;
+		i++;
 	}
-	return (count);
+	return (buff);
 }

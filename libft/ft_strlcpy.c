@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 17:21:36 by gcosta-d          #+#    #+#             */
-/*   Updated: 2021/11/24 21:32:29 by gcosta-d         ###   ########.fr       */
+/*   Created: 2021/08/20 16:35:58 by gcosta-d          #+#    #+#             */
+/*   Updated: 2021/09/08 17:53:54 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putstr(const char *str)
+/* Strlcpy copies size memories from src to dest and returns
+ * the length of source. The size passed inlcude the null terminator.
+ */
+
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	int	count;
+	size_t	src_len;
+	size_t	j;
 
-	count = 0;
-	while (str[count])
+	src_len = ft_strlen(src);
+	j = 0;
+	if (size != 0)
 	{
-		write(1, &str[count], 1);
-		count++;
+		while (j < size - 1 && j != src_len)
+		{
+			dest[j] = src[j];
+			j++;
+		}
+		dest[j] = 0;
 	}
-	return (count);
+	return (src_len);
 }

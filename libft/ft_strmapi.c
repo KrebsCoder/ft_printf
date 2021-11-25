@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 17:21:36 by gcosta-d          #+#    #+#             */
-/*   Updated: 2021/11/24 21:32:29 by gcosta-d         ###   ########.fr       */
+/*   Created: 2021/08/25 15:03:17 by gcosta-d          #+#    #+#             */
+/*   Updated: 2021/09/14 10:18:04 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putstr(const char *str)
+/* This function applies a callback function while iterating the string */
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	count;
+	unsigned int	i;
+	char			*str;
 
-	count = 0;
-	while (str[count])
+	i = 0;
+	str = (char *) ft_calloc(ft_strlen(s) + 1, sizeof(char));
+	if (!str)
+		return (NULL);
+	while (s[i])
 	{
-		write(1, &str[count], 1);
-		count++;
+		str[i] = f(i, s[i]);
+		i++;
 	}
-	return (count);
+	return (str);
 }

@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 17:21:36 by gcosta-d          #+#    #+#             */
-/*   Updated: 2021/11/24 21:32:29 by gcosta-d         ###   ########.fr       */
+/*   Created: 2021/08/20 16:36:03 by gcosta-d          #+#    #+#             */
+/*   Updated: 2021/08/28 15:39:42 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putstr(const char *str)
+size_t	ft_strlen(const char *s)
 {
-	int	count;
+	size_t	i;
 
-	count = 0;
-	while (str[count])
-	{
-		write(1, &str[count], 1);
-		count++;
-	}
-	return (count);
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }

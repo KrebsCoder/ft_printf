@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 17:21:36 by gcosta-d          #+#    #+#             */
-/*   Updated: 2021/11/24 21:32:29 by gcosta-d         ###   ########.fr       */
+/*   Created: 2021/08/25 15:01:43 by gcosta-d          #+#    #+#             */
+/*   Updated: 2021/09/14 10:15:58 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
+#include <unistd.h>
 
-int	ft_putstr(const char *str)
+void	ft_putendl_fd(char *s, int fd)
 {
-	int	count;
-
-	count = 0;
-	while (str[count])
+	while (*s != 0)
 	{
-		write(1, &str[count], 1);
-		count++;
+		write (fd, s, 1);
+		s++;
 	}
-	return (count);
+	write (fd, "\n", 1);
 }

@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 17:21:36 by gcosta-d          #+#    #+#             */
-/*   Updated: 2021/11/24 21:32:29 by gcosta-d         ###   ########.fr       */
+/*   Created: 2021/08/20 16:35:48 by gcosta-d          #+#    #+#             */
+/*   Updated: 2021/09/14 10:17:27 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putstr(const char *str)
+/* This function dupplicates the string that is passed.
+ * And return a pointer to the copied string.
+ */
+
+char	*ft_strdup(const char *s)
 {
-	int	count;
+	size_t	s_len;
+	char	*p;
+	char	*pointer;
 
-	count = 0;
-	while (str[count])
-	{
-		write(1, &str[count], 1);
-		count++;
-	}
-	return (count);
+	s_len = ft_strlen(s) + 1;
+	p = (char *)ft_calloc(s_len, sizeof(char));
+	if (!p)
+		return (NULL);
+	pointer = p;
+	ft_strlcpy(p, s, s_len);
+	return (pointer);
 }

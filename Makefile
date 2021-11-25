@@ -6,10 +6,23 @@
 #    By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/25 22:35:24 by lkrebs-l          #+#    #+#              #
-#    Updated: 2021/10/28 21:49:24 by gcosta-d         ###   ########.fr        #
+#    Updated: 2021/11/24 21:32:08 by gcosta-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/11/10 17:22:37 by gcosta-d          #+#    #+#              #
+#    Updated: 2021/11/11 14:18:55 by gcosta-d         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+LIBFT = libft.a
 NAME = libftprintf.a
 CC = clang
 FLAGS = -Wall -Werror -Wextra
@@ -23,13 +36,21 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
+	$(MAKE) -C ./includes
+	cp ./includes/$(LIBFT) $(NAME)
 	ar -rc $(NAME) $(OBJ)
 
-clean:
+clean: libftclean
 	rm -f $(OBJ)
 
-fclean: clean
+fclean: clean libftfclean
 	rm -f $(NAME)
+
+libftclean:
+	$(MAKE) -C ./includes clean
+
+libftfclean:
+	$(MAKE) -C ./includes fclean
 
 re: fclean all
 

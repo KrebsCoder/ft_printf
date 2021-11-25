@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 17:21:36 by gcosta-d          #+#    #+#             */
-/*   Updated: 2021/11/24 21:32:29 by gcosta-d         ###   ########.fr       */
+/*   Created: 2021/09/08 20:28:16 by gcosta-d          #+#    #+#             */
+/*   Updated: 2021/09/14 10:02:26 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putstr(const char *str)
+/* List add front will add new elements to the front of the list
+ * We need to change the next of the new element to keeps the address
+ * of the pointer that point to the head of the list. Then the pointer
+ * keeps the address of the new element.
+ */
+
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	int	count;
-
-	count = 0;
-	while (str[count])
-	{
-		write(1, &str[count], 1);
-		count++;
-	}
-	return (count);
+	new->next = *lst;
+	*lst = new;
 }

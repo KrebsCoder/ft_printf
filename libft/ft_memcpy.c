@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcosta-d <gcosta-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/10 17:21:36 by gcosta-d          #+#    #+#             */
-/*   Updated: 2021/11/24 21:32:29 by gcosta-d         ###   ########.fr       */
+/*   Created: 2021/08/20 16:35:27 by gcosta-d          #+#    #+#             */
+/*   Updated: 2021/09/14 10:14:49 by gcosta-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putstr(const char *str)
+/*	Memcpy copies n memory area to another and return a pointer
+ *	to the destinated area.
+ */
+
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	int	count;
+	size_t	i;
+	char	*buff_dest;
+	char	*buff_src;
 
-	count = 0;
-	while (str[count])
+	i = 0;
+	buff_dest = (char *)dest;
+	buff_src = (char *)src;
+	if (buff_dest == 0 && buff_src == 0)
+		return (NULL);
+	while (i < n)
 	{
-		write(1, &str[count], 1);
-		count++;
+		buff_dest[i] = buff_src[i];
+		i++;
 	}
-	return (count);
+	return (buff_dest);
 }
